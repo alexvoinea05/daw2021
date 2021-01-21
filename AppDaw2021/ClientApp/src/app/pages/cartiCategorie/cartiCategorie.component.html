@@ -1,0 +1,25 @@
+<h1>CartiCategorie</h1>
+
+<p>Acestea sunt toate cartiile din aceasta categorie</p>
+
+<p *ngIf="!carti"><em>Loading...</em></p>
+
+<table class='table' *ngIf="carti">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nume Carte</th>
+      <th>Descriere</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let Carte of carti">
+      <td>{{ Carte.idCarte }}</td>
+      <td>{{ Carte.numeCarte }}</td>
+      <td>{{ Carte.descriere }}</td>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link text-dark" routerLink="/api/carte/unitara/{{Carte.idCarte}}">Detalii carte</a>
+      </li>
+    </tr>
+  </tbody>
+</table>

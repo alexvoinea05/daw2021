@@ -1,0 +1,21 @@
+<h1>Carti</h1>
+
+<p>Acestea sunt toate cartiile</p>
+
+<p *ngIf="!Carte"><em>Loading...</em></p>
+
+<table class='table' *ngIf="Carte">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nume Carte</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let Carte of Carte">
+      <td>{{ Carte.idCarte }}</td>
+      <td>{{ Carte.numeCarte }}</td>
+    </tr>
+  </tbody>
+</table>

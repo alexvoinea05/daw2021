@@ -1,0 +1,28 @@
+<h1>Categorii</h1>
+
+<p>Acestea sunt toate categoriile</p>
+
+<p *ngIf="!Categorie"><em>Loading...</em></p>
+
+<table class='table' *ngIf="Categorie">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nume Categorie</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let Categorie of Categorie">
+      <td>
+        <a href="https://localhost:44334/api/carte/categorie/{{Categorie.idCategorie}}">
+          {{Categorie.idCategorie}}
+        </a>
+      </td>
+      <td>{{ Categorie.genCategorie }}</td>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link text-dark" routerLink="/api/carte/categorie/{{Categorie.idCategorie}}">Categorie</a>
+      </li>
+    </tr>
+  </tbody>
+</table>
